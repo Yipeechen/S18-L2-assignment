@@ -37,6 +37,12 @@
     }
     }
 
+    if (window.radiotrue.checked) {
+      span.style.color = "red";
+    }else{
+      span.style.color = "green";
+    }
+
     //加入移除按鈕
     removeButton.textContent = "V";
     todo.appendChild(removeButton);
@@ -53,6 +59,13 @@
 <div>
   <input type="text" id="input">
   <button onclick="createToDo()"> + </button>
+  <form>
+    <input type="radio" id="radiotrue" value="0" name="status" checked="true">
+    <label for="radiotrue">緊急</label>
+    <input type="radio" id="radiofalse" value="1" name="status">
+    <label for="radiofalse">不緊急</label>
+  </form>
+
   <div id="todolist"></div>
 </div>
 
