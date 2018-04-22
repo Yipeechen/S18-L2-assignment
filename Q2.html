@@ -24,8 +24,26 @@
         return;
       }
 
+      // 查詢性別的 function
+      var char1 = code[1];
+      var gender = findGender(char1);
+      if (!gender) {
+        alert("性別錯誤，這不是一個正確的身分證字號！");
+        return;
+      }
+
     }
-    document.getElementById("result").innerHTML = "縣市：" + city + "， 通過驗證";
+    document.getElementById("result").innerHTML = "性別：" + gender + "/ 縣市：" + city + "， 通過驗證";
+  }
+
+
+  // 查詢性別的功能
+  function findGender(char1) {
+    switch(char1) {
+      case"1": return "男生";
+      case"2": return "女生";
+      default: return false;
+    }
   }
 
   // 額外查詢縣市的功能
